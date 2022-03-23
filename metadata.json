@@ -1,0 +1,19 @@
+{
+  "name": "Enterprise Architecture",
+  "description": "Innovate - Transform - Simplify - 100x",
+  "image": "https://ipfs.io/ipfs/QmTLizGdvwpivBpFPugr3HaMWoSqw2uC7UHJ79xCzuQmhF?filename=EA%20Logo.png",
+  "attributes": [
+    {
+      "trait_type":"Innovation",
+      "value": 100
+    },
+    {
+      "trait_type":"Transform",
+      "value": 100
+    },
+    {
+       "trait_type":"Simplify",
+        "value": 100
+    }
+  ]
+}

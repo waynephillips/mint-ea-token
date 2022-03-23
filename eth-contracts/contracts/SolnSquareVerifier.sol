@@ -6,9 +6,9 @@ import './ERC721Mintable.sol';
 import "./verifier.sol";
 
 // TODO define another contract named SolnSquareVerifier that inherits from your ERC721Mintable class
-contract SolnSquareVerifier is WaynesRealEstateToken {
+contract SolnSquareVerifier is EAToken {
     Verifier verifier;
-    constructor (address verifiercontract, string memory tokenname, string memory tokensymbol) public WaynesRealEstateToken (tokenname, tokensymbol) {
+    constructor (address verifiercontract, string memory tokenname, string memory tokensymbol) public EAToken (tokenname, tokensymbol) {
         verifier = Verifier(verifiercontract);
     }
     // TODO define a solutions struct that can hold an index & an address
@@ -35,7 +35,7 @@ contract SolnSquareVerifier is WaynesRealEstateToken {
     // TODO Create a function to mint new NFT only after the solution has been verified
     //  - make sure the solution is unique (has not been used before)
     //  - make sure you handle metadata as well as tokenSuplly
-    function Mint_WaynesRealEstateToken(uint256 tokenId, address tokenAddress, Verifier.Proof memory proof, uint256[2] memory input) onlyOwner public
+    function Mint_EAToken(uint256 tokenId, address tokenAddress, Verifier.Proof memory proof, uint256[2] memory input) onlyOwner public
     {
         bytes32 solutionKey = keccak256(abi.encodePacked(proof.a.X, proof.a.Y, proof.b.X, proof.b.Y, proof.c.X, proof.c.Y, input));
         require(uniqueSolutions[solutionKey].sender == address(0), 'The Solution already exists.');

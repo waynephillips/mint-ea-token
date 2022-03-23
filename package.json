@@ -1,5 +1,5 @@
 {
-  "name": "Mint EA NFT Tokens",
+  "name": "mint-ea-token",
   "version": "1.0.0",
   "description": "Mint EA NFT Tokens.",
   "main": "index.js",
@@ -14,6 +14,7 @@
     "lite-server": "2.4.0"
   },
   "dependencies": {
+    "@openzeppelin/contracts": "^4.5.0",
     "openzeppelin-solidity": "^2.2.0",
     "solc": "^0.5.2",
     "solc-js": "^0.5.2",

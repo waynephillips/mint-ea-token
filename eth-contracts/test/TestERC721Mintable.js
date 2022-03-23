@@ -1,4 +1,4 @@
-var WaynesRealEstateToken = artifacts.require('WaynesRealEstateToken');
+var WaynesRealEstateToken = artifacts.require('EAToken');
 const truffleAssert = require('truffle-assertions'); // credit - see https://www.npmjs.com/package/truffle-assertions and https://github.com/rkalis/truffle-assertions
 
 contract('TestERC721Mintable', accounts => {
@@ -6,7 +6,7 @@ contract('TestERC721Mintable', accounts => {
     const account_two = accounts[1];
     describe('match erc721 spec', function () {
         beforeEach(async function () {
-            this.contract = await WaynesRealEstateToken.new("WaynesRealEstateToken", "WSPPROPNFT",{from: account_one});
+            this.contract = await WaynesRealEstateToken.new("EAToken", "EANFT",{from: account_one});
 
             // TODO: mint multiple tokens
             await this.contract.mint(accounts[0], 101, {from:account_one});
@@ -40,7 +40,7 @@ contract('TestERC721Mintable', accounts => {
 
     describe('have ownership properties', function () {
         beforeEach(async function () {
-            this.contract = await WaynesRealEstateToken.new("WaynesRealEstateToken", "WSPPROPNFT",{from: account_one});
+            this.contract = await WaynesRealEstateToken.new("EAToken", "EANFT",{from: account_one});
         })
 
         it('should fail when minting when address is not contract owner', async function () {

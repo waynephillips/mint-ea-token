@@ -4,6 +4,6 @@ var SolnSquareVerifier = artifacts.require("./SolnSquareVerifier.sol");
 
 module.exports = function(deployer) {
   deployer.deploy(Verifier).then(() => {
-    return deployer.deploy(SolnSquareVerifier, Verifier.address,"WaynesRealEstateToken","WSPPROPNFT")
+    return deployer.deploy(SolnSquareVerifier, Verifier.address,"EA NFT Token","EANFT")
   });
 };
